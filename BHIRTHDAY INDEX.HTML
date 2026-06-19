@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 19th Birthday Bhumi ❤️ | From Raj </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#0f172a,#000);
+color:white;
+overflow-x:hidden;
+}
+
+/* Stars */
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+background:
+radial-gradient(white 1px, transparent 1px);
+background-size:50px 50px;
+opacity:.4;
+animation:twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;}
+to{opacity:.6;}
+}
+
+/* Welcome Screen */
+
+#welcome{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+text-align:center;
+padding:20px;
+}
+
+#welcome h1{
+font-size:3rem;
+margin-bottom:30px;
+font-family:'Dancing Script',cursive;
+color:#ff4d6d;
+}
+
+#welcome button{
+padding:18px 40px;
+font-size:1.2rem;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff4d6d,#ff85a2);
+color:white;
+box-shadow:0 0 25px #ff4d6d;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:url("photo4.jpg") center center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Dancing Script',cursive;
+font-size:5rem;
+color:white;
+text-shadow:0 0 20px #ff4d6d;
+}
+
+.hero h2{
+margin-top:15px;
+font-size:1.7rem;
+}
+
+#typing{
+margin-top:20px;
+font-size:1.2rem;
+color:#ffd6e0;
+max-width:800px;
+margin-inline:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#ff4d6d;
+color:white;
+text-decoration:none;
+border-radius:50px;
+}
+
+/* Hearts */
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:999;
+}
+
+.hearts span{
+position:absolute;
+bottom:-50px;
+animation:float linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+/* Sections */
+
+section{
+padding:80px 20px;
+}
+
+h2.section-title{
+text-align:center;
+font-size:3rem;
+margin-bottom:40px;
+font-family:'Dancing Script',cursive;
+color:#ff85a2;
+}
+
+/* Countdown */
+
+.timer{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.box{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+min-width:120px;
+text-align:center;
+}
+
+.box span{
+display:block;
+font-size:2rem;
+font-weight:bold;
+}
+
+/* Days Together */
+
+.days{
+text-align:center;
+font-size:2rem;
+color:#ffd6e0;
+}
+
+/* Slideshow */
+
+.slider{
+max-width:900px;
+margin:auto;
+}
+
+.slider img{
+width:100%;
+height:600px;
+object-fit:cover;
+border-radius:25px;
+display:none;
+box-shadow:0 0 30px rgba(255,77,109,.4);
+}
+
+.slider img.active{
+display:block;
+}
+
+/* Polaroids */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.polaroid{
+background:white;
+padding:15px;
+border-radius:15px;
+color:black;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+transition:.5s;
+}
+
+.polaroid:hover{
+transform:scale(1.05) rotate(0deg);
+}
+
+.polaroid img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
+
+.polaroid p{
+padding:15px;
+font-weight:600;
+text-align:center;
+}
+
+/* Special Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+/* Notes */
+
+.note{
+max-width:800px;
+margin:auto;
+padding:30px;
+font-size:1.5rem;
+text-align:center;
+display:none;
+}
+
+.note.active{
+display:block;
+}
+
+/* Letter */
+
+.letter{
+max-width:1000px;
+margin:auto;
+text-align:center;
+line-height:2;
+font-size:1.1rem;
+}
+
+/* Button */
+
+.celebrate{
+display:block;
+margin:40px auto;
+padding:18px 40px;
+border:none;
+border-radius:50px;
+background:#ff4d6d;
+color:white;
+font-size:1.1rem;
+cursor:pointer;
+}
+
+/* Ending */
+
+.ending{
+text-align:center;
+background:linear-gradient(to top,#000,#111);
+}
+
+.ending h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+color:#ff85a2;
+}
+
+/* Footer */
+
+footer{
+padding:40px;
+text-align:center;
+background:#050505;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.slider img{
+height:400px;
+}
+
+h2.section-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div id="welcome">
+<h1>🎁 A Special Surprise For Bhumi ❤️</h1>
+<button onclick="openGift()">Open Your Gift 🎂</button>
+</div>
+
+<div id="main" style="display:none">
+
+<div class="hearts" id="hearts"></div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Happy 19th Birthday Bhumi ❤️</h1>
+
+<h2>20 June 2007 ✨ A Day That Made The World More Beautiful</h2>
+
+<p id="typing"></p>
+
+<a href="#memories" class="btn">Begin Our Story ❤️</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">🎂 Countdown To Your Birthday</h2>
+
+<div class="timer">
+
+<div class="box"><span id="days">0</span>Days</div>
+<div class="box"><span id="hours">0</span>Hours</div>
+<div class="box"><span id="minutes">0</span>Minutes</div>
+<div class="box"><span id="seconds">0</span>Seconds</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">❤️ Our Journey ❤️</h2>
+<div id="daysTogether" class="days"></div>
+
+
+</section>
+
+<section>
+
+<h2 class="section-title">📸 Beautiful Memories</h2>
+
+<div class="slider">
+
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\112.jpeg" class="active">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.04.57 PM.jpeg">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.04.58 .jpeg">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.04.58 PM.jpeg">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.04.59 PM.jpeg">
+
+</div>
+
+</section>
+
+<section id="memories">
+
+<h2 class="section-title">🌹 Memory Wall 🌹</h2>
+
+<div class="gallery">
+
+<div class="polaroid">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.42.50 PM.jpeg">
+<p>Our Beautiful Memory ❤️</p>
+</div>
+
+<div class="polaroid">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.43.56 PM.jpeg">
+<p>Your Lovely Smile 😊</p>
+</div>
+
+<div class="polaroid">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.04.59 PM.jpeg">
+<p>Together Forever ❤️</p>
+</div>
+
+<div class="polaroid">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\WhatsApp Image 2026-06-18 at 5.04.58 .jpeg">
+<p>My Favorite Moment 💖</p>
+</div>
+
+<div class="polaroid">
+<img src="c:\Users\RAJ MISHRA\Desktop\my love\112.jpeg">
+<p>My Happy Place ✨</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">🌹 Why Bhumi Is Special 🌹</h2>
+
+<div class="cards">
+
+<div class="card">❤️ Her Heart<br><br>She makes every day brighter.</div>
+
+<div class="card">😊 Her Smile<br><br>The most beautiful smile in the world.</div>
+
+<div class="card">✨ Her Presence<br><br>Every moment becomes magical.</div>
+
+<div class="card">💖 Her Love<br><br>The greatest gift of my life my cutie.</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">💌 Love Notes for my jaan 💌</h2>
+
+<div class="note active">"You are my favorite notification jab bhi tu message karti hai na mujhe se raha nai jata bina baat kiye ❤️"</div>
+<div class="note">"Every moment with you feels magical, like your first day at home your first romantic sex 😊✨"</div>
+<div class="note">"My happiest place is beside you, tere bina mein kuch nai hu meri jaan❤️"</div>
+
+</section>
+
+<button class="celebrate" onclick="alert('🎉 Happy Birthday Bhumi ❤️ 🎂')">
+🎆 Celebrate 🎆
+</button>
+
+<section>
+
+<h2 class="section-title">💌 A Letter From Raj</h2>
+
+<div class="letter">
+
+Dear Bhumi(My cutei) ❤️<br><br>
+
+Happy Birthday to the most amazing person in my life.<br><br>
+
+Every day with you feels like a beautiful dream.
+Your smile brightens my darkest days,
+your laughter fills my heart with happiness,
+and your love makes my world complete.<br><br>
+
+Thank you for all the beautiful memories we've created together.
+Every photo on this page reminds me how lucky I am to have you in my life.<br><br>
+
+I wish you happiness, success, good health,
+and endless love throughout your life.<br><br>
+
+Happy Birthday My Love ❤️<br><br>
+
+Forever Yours,<br>
+Raj your Doremon 😊✨❤️
+
+</div>
+
+</section>
+
+<section class="ending">
+
+<h1>❤️ Happy Birthday Bhumi ❤️</h1>
+
+<h2>Forever & Always 💍</h2>
+
+<br>
+
+<p>
+No matter where life takes us,
+you will always be my favorite person.
+<br><br>
+I Love You Forever ❤️
+<br><br>
+— Raj — 
+</p>
+
+</section>
+
+<footer>
+
+<h2>Made With ❤️ By Raj your Doremon </h2>
+
+<p>For Bhumi (My love)  ❤️</p>
+
+</footer>
+
+</div>
+
+<script>
+
+function openGift(){
+document.getElementById('welcome').style.display='none';
+document.getElementById('main').style.display='block';
+}
+
+/* Typing */
+
+const text="Dear Bhumi ❤️, thank you for bringing love, happiness and beautiful memories into my life. Happy 19th Birthday My Love ❤️";
+
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,70);
+}
+}
+type();
+
+/* Hearts */
+
+const hearts=document.getElementById("hearts");
+
+for(let i=0;i<50;i++){
+
+let h=document.createElement("span");
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(Math.random()*20+15)+"px";
+
+h.style.animationDuration=(Math.random()*6+5)+"s";
+
+hearts.appendChild(h);
+}
+
+/* Birthday Countdown */
+
+const birthday=new Date("June 20, 2026 00:00:00");
+
+function updateCountdown(){
+
+const now=new Date();
+
+const diff=birthday-now;
+
+document.getElementById("days").innerHTML=Math.floor(diff/(1000*60*60*24));
+document.getElementById("hours").innerHTML=Math.floor(diff/(1000*60*60))%24;
+document.getElementById("minutes").innerHTML=Math.floor(diff/(1000*60))%60;
+document.getElementById("seconds").innerHTML=Math.floor(diff/1000)%60;
+
+}
+
+setInterval(updateCountdown,1000);
+
+/* Days Together */
+
+const startDate=new Date("2024-01-01");
+
+const today=new Date();
+
+const diff=today-startDate;
+
+document.getElementById("daysTogether").innerHTML=
+Math.floor(diff/(1000*60*60*24))+" Days Together ❤️";
+
+/* Slider */
+
+let slides=document.querySelectorAll(".slider img");
+
+let current=0;
+
+setInterval(()=>{
+
+slides[current].classList.remove("active");
+
+current=(current+1)%slides.length;
+
+slides[current].classList.add("active");
+
+},3000);
+
+/* Notes */
+
+let notes=document.querySelectorAll(".note");
+
+let noteIndex=0;
+
+setInterval(()=>{
+
+notes[noteIndex].classList.remove("active");
+
+noteIndex=(noteIndex+1)%notes.length;
+
+notes[noteIndex].classList.add("active");
+
+},3000);
+
+</script>
+
+</body>
+</html> 
